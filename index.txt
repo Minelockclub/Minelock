@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>MINELOCK</title>
+    <!-- Add this line for the favicon -->
+    <link rel="icon" href="mari.png" type="image/png">
+    <style>
+        @media (max-width: 767px) {
+            body {
+                transform: scale(1.5);
+                transform-origin: top left;
+                width: 1024px;
+                overflow-x: scroll;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            overflow: hidden;
+        }
+        body {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        .container {
+            height: 460vh; /* Increased from 360vh to 460vh to accommodate new section */
+            display: flex;
+            flex-direction: column;
+        }
+        .section {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            scroll-snap-align: start;
+            position: relative;
+        }
+        
+        .section1 {
+            height: 60vh;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+        }
+        .top-part {
+            height: 40vh;
+            width: 100%;
+            background: url('a.avif') center/cover no-repeat;
+            position: relative;
+        }
+        .minelock {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            font-size: 30px;
+        }
+        .scrolling-text {
+            height: 20vh;
+            width: 100%;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        .scrolling-text span {
+            position: absolute;
+            animation: scrollText 15s linear infinite;
+        }
+        @keyframes scrollText {
+            from {
+                left: 100%;
+            }
+            to {
+                left: -110%;
+            }
+        }
+        
+        .section2 {
+            height: 100vh;
+            background: rgb(12, 12, 12);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .welcome-text {
+            background: rgb(12, 12, 12);
+            color: white;
+            padding: 15px 30px;
+            font-size: 40px;
+            font-family: 'Times New Roman';
+            text-align: center;
+        }
+        .image-box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+        .image-box {
+            width: 25%;
+            height: 80%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .section3 {
+            height: 100vh;
+            background: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .scrolling-text-2 {
+            height: 20vh;
+            width: 100%;
+            background: red;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        .scrolling-text-2 span {
+            position: absolute;
+            animation: scrollText 16s linear infinite;
+        }
+
+        .image-grid {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .image-row {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+        }
+        .image-container {
+            width: 33.33%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .black-strip {
+            height: 15vh;
+            width: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        .image-row a {
+            width: 100%;
+            height: 65vh;
+            display: block;
+        }
+        .image-row img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .image-row img:hover {
+            transform: scale(1.1);
+        }
+        
+        .section4 {
+            height: 100vh;
+            background: url('ai.avif') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .red-box {
+            width: 80%;
+            height: 70%;
+            background: black;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+        }
+        .section4-text {
+            color: white;
+            font-size: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            position: relative;
+            padding-left: 60px;
+        }
+        .rhombus {
+            width: 25px;
+            height: 25px;
+            background: white;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+        
+        /* New Section 5 */
+        .section5 {
+            height: 100vh;
+            background: black;
+            display: flex;
+        }
+        .black-box {
+            height: 100vh;
+            background: black;
+            color: white;
+            font-size: 24px;
+            padding: 20px;
+            position: relative;
+        }
+        .white-line {
+            width: 2px;
+            height: 100vh;
+            background: white;
+        }
+        .black-box:nth-child(1) {
+            width: calc(33.33% - 1px);
+        }
+        .black-box:nth-child(3) {
+            width: calc(33.33% - 1px);
+        }
+        .black-box:nth-child(5) {
+            width: 33.33%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Section 1 -->
+        <div class="section section1">
+            <div class="top-part">
+                <div class="minelock">MINELOCK</div>
+            </div>
+            <div class="scrolling-text">
+                <span>Create yourself with MINELOCK</span>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section section2">
+            <div class="welcome-text">A&nbsp;&nbsp;SPECIAL&nbsp;&nbsp;THANKS&nbsp;&nbsp;TO&nbsp;&nbsp;OUR&nbsp;&nbsp;PARTNERS</div>
+            <div class="image-box-container">
+                <a href="https://eooy.io/" class="image-box"><img src="ad1.jpg" alt="Partner 1"></a>
+                <a href="https://www.instagram.com/knockshok" class="image-box"><img src="ad2.jpg" alt="Partner 2"></a>
+                <a href="https://Tattoofits.com" class="image-box"><img src="ad3.jpg" alt="Partner 3"></a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section section3">
+            <div class="scrolling-text-2">
+                <span>Chose your plan with MINELOCK</span>
+            </div>
+            <div class="image-grid">
+                <div class="image-row">
+                    <div class="image-container">
+                        <div class="black-strip">Projects Freelancing</div>
+                        <a href="pf.html"><img src="p1.avif" alt="Plan 1"></a>
+                    </div>
+                    <div class="image-container">
+                        <div class="black-strip">Digital Marketing</div>
+                        <a href="dm.html"><img src="p2.jpeg" alt="Plan 2"></a>
+                    </div>
+                    <div class="image-container">
+                        <div class="black-strip">Premium Marketing</div>
+                        <a href="pf.html"><img src="p3.png" alt="Plan 3"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="section section4">
+            <div class="red-box">
+                <div class="section4-text">
+                    <div class="rhombus"></div>
+                    Strong marketing is the key to raise market value of your business
+                </div>
+                <div class="section4-text">
+                    <div class="rhombus"></div>
+                    People follow trends, we help our customers to make their own trends
+                </div>
+                <div class="section4-text">
+                    <div class="rhombus"></div>
+                    We have a team of highly skilled AI engineers to find you the best audience
+                </div>
+            </div>
+        </div>
+        
+        <!-- New Section 5 -->
+        <div class="section section5">
+            <div class="black-box"><span style="color: red; font-size: 60px; font-weight: bold;">Anlei Club</span><br><br><br><span style="font-size: 25px;">Anlei Club provides you the service of gaining thousands of dollars by just sparing your time to play on our website<br><br><br><br><span style="font-size: 35px;">Functional from January,<br>2026</span></div>
+            <div class="white-line"></div>
+            <div class="black-box"><span style="font-size: 25px; font-weight: bold;">Huzaifa Ahmad, CEO Eooy Digitals</span><br><br><span style="font-size: 20px;">I am a huge fan of Minelock. Their interests align with mine. They have truly proved to be one of the most accurate marketing firm<br><br><br><br><span style="font-size: 25px; font-weight: bold;">Christofer Anthony, CEO Brompton Carpets</span><br><br><span style="font-size: 20px;">Minelock is a true friend. Run by enthusiastic youngsters, I really appreciate how they use different AI techniques to find most accurate audience<br><br><br><br><br></span></div>
+            <div class="white-line"></div>
+            <div class="black-box"><br><br><br><span style="color: red; font-size: 30px;">MINELOCK do not use any other means and platform for contact. Beware of any scam and fraud</span></div>
+        </div>
+    </div>
+</body>
+</html>

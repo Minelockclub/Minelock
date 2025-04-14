@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing</title>
+    <link rel="icon" href="mari.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: "Times New Roman", Times, serif;
+        }
+        
+        .section {
+            height: 100vh;
+            width: 100%;
+            font-size: 3rem;
+        }
+        
+        #section1 {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            color: white;
+        }
+        
+        .rectangle-container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 1200px;
+            gap: 20px;
+        }
+        
+        .rectangle {
+            width: 45%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .image-part {
+            height: 70%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 1.5rem;
+        }
+        
+        .text-part {
+            height: 30%;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            font-size: 20px;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        /* Section 2 Styles */
+        #section2 {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .scrolling-text {
+            height: 20vh;
+            width: 100%;
+            background: red;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        .scrolling-text span {
+            position: absolute;
+            animation: scrollText 15s linear infinite;
+        }
+        @keyframes scrollText {
+            from {
+                left: 100%;
+            }
+            to {
+                left: -110%;
+            }
+        }
+        
+        .main-content {
+            height: 80vh;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            display: flex;
+            position: relative;
+        }
+        
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
+            font-size: 25px;
+        }
+        
+        .rotating-square {
+            width: 300px;
+            height: 300px;
+            background-image: url('dm3.png');
+            background-size: cover;
+            background-position: center;
+            animation: rotate 10s linear infinite;
+            margin: 70px 60px 0 0;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        #section3 {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            color: black;
+        }
+        
+        .left-space {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 30px;
+            z-index: 1;
+            background-color: white;
+            clip-path: polygon(0 0, 80% 0, 40% 100%, 0% 100%);
+        }
+        
+        .right-space {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            clip-path: polygon(1% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+        
+        .right-space img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .connect-button {
+            position: absolute;
+            bottom: 80px;
+            left: 20px;
+            width: 150px;
+            height: 50px;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+        
+        .connect-button:hover {
+            background-color: black;
+            transform: none; /* Remove the scale transform */
+        }
+    </style>
+</head>
+<body>
+    <div class="section" id="section1">
+        <div class="rectangle-container">
+            <div class="rectangle">
+                <div class="image-part" style="background-image: url('dm1.avif');">
+                    <!-- Image will be displayed as background -->
+                </div>
+                <div class="text-part">
+                    We specialize in influencer-integrated marketing, partnering with YouTubers to seamlessly embed brand promotions within content, enhancing engagement and authenticity
+                </div>
+            </div>
+            <div class="rectangle">
+                <div class="image-part" style="background-image: url('dm2.avif');">
+                    <!-- Image will be displayed as background -->
+                </div>
+                <div class="text-part">
+                    We specialize in influencer-driven marketing, integrating your ads organically into Instagram Stories through strategic collaborations with high-engagement content creators
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="section2">
+        <div class="scrolling-text">
+            <span>Chose marketing plan with MINELOCK</span>
+        </div>
+        <div class="main-content">
+            <div class="text-content">
+            <br>We have connections with almost every kind of social media personality<br>to do our work precisely and accurately as you desire<br><br>Our team themselves use AI algorithms to find which<br>media personality is your most desired audience<br><br><br><br><span style="font-size: 40px; font-weight: bold;">Marketing your brand with modern tools<br>is our distinction</span></p>
+            </div>
+            <div class="rotating-square"></div>
+        </div>
+    </div>
+    
+    <div class="section" id="section3">
+        <div class="left-space">
+            <br><br><br>Send your data and tell the desired<br>marketing you require. Our team will<br>collaborate with you to find the best<br>plan according to your budget and<br>requirement
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=minelockclub@gmail.com&su=Digital%20Marketing" 
+               target="_blank" 
+               class="connect-button">
+                Connect
+            </a>
+        </div>
+        <div class="right-space">
+            <img src="dm4.avif" alt="Right section image">
+        </div>
+    </div>
+</body>
+</html>
