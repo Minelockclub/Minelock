@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
     <title>MINELOCK</title>
     <!-- Add this line for the favicon -->
     <link rel="icon" href="mari.png" type="image/png">
     <style>
-
+@media (max-width: 767px) {
+    body {
+        width: 100%; /* Full mobile width (no horizontal scroll) */
+        overflow-x: hidden; /* Prevent unwanted side-scrolling */
+        transform: none; /* Remove zoom effect */
+    }
+    .container {
+        height: 200vh; /* Double the visible area per scroll */
+    }
+}
         * {
             margin: 0;
             padding: 0;
@@ -255,85 +264,6 @@
         .black-box:nth-child(5) {
             width: 33.33%;
         }
-@media (max-width: 768px) {
-    /* Double all heights to create compressed scrolling */
-    .container {
-        height: 1440vh; /* Original 720vh × 2 */
-    }
-
-    /* Half-size scaling for all elements */
-    html {
-        transform: scale(0.5);
-        transform-origin: top left;
-        width: 200%;
-        height: 200%;
-    }
-    
-    body {
-        width: 200%;
-        height: 200%;
-        overflow-x: hidden;
-    }
-
-    /* Section adjustments */
-    .section1 {
-        height: 120vh; /* Original 60vh × 2 */
-    }
-    .section2 {
-        height: 200vh; /* Original 100vh × 2 */
-    }
-    .section3 {
-        height: 200vh; /* Original 100vh × 2 */
-    }
-    .section4 {
-        height: 200vh; /* Original 100vh × 2 */
-    }
-    .section5 {
-        height: 200vh; /* Original 100vh × 2 */
-    }
-
-    /* Text size adjustments */
-    .minelock {
-        font-size: 48px;
-    }
-    .scrolling-text span,
-    .scrolling-text-2 span {
-        font-size: 80px;
-    }
-    .welcome-text {
-        font-size: 60px;
-    }
-    .black-strip {
-        font-size: 48px;
-    }
-    .section4-text {
-        font-size: 40px;
-    }
-    .black-box {
-        font-size: 48px;
-    }
-
-    /* Maintain original mobile layout adjustments */
-    .image-box-container {
-        flex-direction: column;
-    }
-    .image-box {
-        width: 80%;
-        height: 60vh;
-    }
-    .image-grid {
-        flex-direction: column;
-    }
-    .image-container {
-        width: 100%;
-    }
-    .section5 {
-        flex-wrap: wrap;
-    }
-    .white-line {
-        display: none;
-    }
-}
     </style>
 </head>
 <body>
@@ -375,7 +305,7 @@
                     </div>
                     <div class="image-container">
                         <div class="black-strip">Premium Marketing</div>
-                        <a href="pm.html"><img src="p3.png" alt="Plan 3"></a>
+                        <a href="pf.html"><img src="p3.png" alt="Plan 3"></a>
                     </div>
                 </div>
             </div>
@@ -408,11 +338,5 @@
             <div class="black-box"><br><br><br><span style="color: red; font-size: 30px;">MINELOCK do not use any other means and platform for contact. Beware of any scam and fraud</span></div>
         </div>
     </div>
-<script>
-    document.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        window.scrollTo(0, window.pageYOffset + e.touches[0].clientY * 2);
-    }, { passive: false });
-</script>
 </body>
 </html>
