@@ -9,12 +9,20 @@
     <style>
 @media (max-width: 767px) {
     body {
-        width: 100%; /* Full mobile width (no horizontal scroll) */
-        overflow-x: hidden; /* Prevent unwanted side-scrolling */
-        transform: none; /* Remove zoom effect */
+        /* Disable forced desktop zoom */
+        width: 100%;
+        transform: none;
+        overflow-x: hidden;
+        
+        /* Double visible area per scroll */
+        height: 200vh !important; /* Force override */
+        scroll-snap-type: none; /* Temporarily disable snap for testing */
     }
     .container {
-        height: 200vh; /* Double the visible area per scroll */
+        height: 200vh !important; /* Match body height */
+    }
+    .section {
+        height: 50vh !important; /* Halve section heights to fit 2x more */
     }
 }
         * {
