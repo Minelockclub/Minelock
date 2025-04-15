@@ -2,29 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MINELOCK</title>
     <!-- Add this line for the favicon -->
     <link rel="icon" href="mari.png" type="image/png">
     <style>
-@media (max-width: 767px) {
-    body {
-        /* Disable forced desktop zoom */
-        width: 100%;
-        transform: none;
-        overflow-x: hidden;
-        
-        /* Double visible area per scroll */
-        height: 200vh !important; /* Force override */
-        scroll-snap-type: none; /* Temporarily disable snap for testing */
-    }
+
+        /* Mobile detection and overlay */
+@media only screen and (max-width: 1024px) {
     .container {
-        height: 200vh !important; /* Match body height */
+        display: none !important;
     }
-    .section {
-        height: 50vh !important; /* Halve section heights to fit 2x more */
+    
+    body {
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    body::before {
+        content: "MINELOCK is only accessible on desktop device";
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        padding: 20px;
     }
 }
+
         * {
             margin: 0;
             padding: 0;
@@ -313,7 +320,7 @@
                     </div>
                     <div class="image-container">
                         <div class="black-strip">Premium Marketing</div>
-                        <a href="pm.html"><img src="p3.png" alt="Plan 3"></a>
+                        <a href="pf.html"><img src="p3.png" alt="Plan 3"></a>
                     </div>
                 </div>
             </div>
@@ -346,21 +353,5 @@
             <div class="black-box"><br><br><br><span style="color: red; font-size: 30px;">MINELOCK do not use any other means and platform for contact. Beware of any scam and fraud</span></div>
         </div>
     </div>
-    <!-- ... (rest of your HTML) ... -->
-
-    <!-- Add this script right before closing body tag -->
-    <script>
-        // Mobile height adjustment
-        function adjustMobileHeight() {
-            if (window.innerWidth <= 767) {
-                document.body.style.height = window.innerHeight * 2 + "px";
-                document.querySelector('.container').style.height = window.innerHeight * 2 + "px";
-            }
-        }
-
-        // Run on load and when resized
-        window.addEventListener('load', adjustMobileHeight);
-        window.addEventListener('resize', adjustMobileHeight);
-    </script>
 </body>
 </html>
