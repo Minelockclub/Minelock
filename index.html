@@ -346,5 +346,21 @@
             <div class="black-box"><br><br><br><span style="color: red; font-size: 30px;">MINELOCK do not use any other means and platform for contact. Beware of any scam and fraud</span></div>
         </div>
     </div>
+    <!-- ... (rest of your HTML) ... -->
+
+    <!-- Add this script right before closing body tag -->
+    <script>
+        // Mobile height adjustment
+        function adjustMobileHeight() {
+            if (window.innerWidth <= 767) {
+                document.body.style.height = window.innerHeight * 2 + "px";
+                document.querySelector('.container').style.height = window.innerHeight * 2 + "px";
+            }
+        }
+
+        // Run on load and when resized
+        window.addEventListener('load', adjustMobileHeight);
+        window.addEventListener('resize', adjustMobileHeight);
+    </script>
 </body>
 </html>
